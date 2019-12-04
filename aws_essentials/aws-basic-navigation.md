@@ -1,4 +1,4 @@
-# AWS Basic Navigation
+# Section 1. AWS Basic Navigation
 
 #### This article assumes that you've created your own AWS account. \(You can Google "AWS free tier" and Create/Login your AWS account on top right of the web page.
 

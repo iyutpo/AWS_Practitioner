@@ -4,5 +4,5 @@
 
 ## AWS\_Essentials
 
-* [AWS Basic Navigation](aws_essentials/aws-basic-navigation.md)
+* [Section 1. AWS Basic Navigation](aws_essentials/aws-basic-navigation.md)
 
