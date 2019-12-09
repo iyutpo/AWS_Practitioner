@@ -46,7 +46,7 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
 ![](../.gitbook/assets/image%20%2843%29.png)
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
             8. Back to "Dashboard" page and you'll see the second box was checked:
 
@@ -56,7 +56,7 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
            1. Here, you'll want to create an IAM user. Click "Access management" --&gt; Click "Users" --&gt; "Add user":
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
 
             2. Next, you can do the same configuration below or customize your own configuration. Click "Next Permissions"
 
@@ -68,7 +68,7 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
             4. I will leave it blank in "Add tags" page and click on "Next: Review"
 
-![](../.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
              5. Take a look at on your information and click "Create user" if everything is good:
 
@@ -102,9 +102,9 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](../.gitbook/assets/image%20%28104%29.png)
 
-![](../.gitbook/assets/image%20%28111%29.png)
+![](../.gitbook/assets/image%20%28114%29.png)
 
     5. **Apply an IAM password policy**:
 
@@ -114,7 +114,7 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
             2. Click on "Set password policy". Then Check "Prevent password reuses" --&gt; Remember 3 password\(s\) --&gt; Click on "Save Changes":
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28118%29.png)
 
 ![](../.gitbook/assets/image%20%2858%29.png)
 
@@ -122,13 +122,13 @@ You'll see 5 Security Status which is also known as "**AWS Best Practices**". It
 
             3. Then all five boxes are checked.
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image%20%2896%29.png)
 
 ## Add IAM Users and Set Policies
 
 Since we've created our root user "jeff", now we want to add some new users and assign certain policies to each of them. For example, a new user we want to add is called "Mark" and we want "Mark" to be able to access an S3 Bucket:
 
-![](../.gitbook/assets/image%20%28105%29.png)
+![](../.gitbook/assets/image%20%28107%29.png)
 
 As you can see, now we don't have any users except "jeff", the root user:
 
@@ -146,7 +146,7 @@ Once in the following page, "Mark" user was already created. In the following pa
 
 The next step is optional, but I would add Tagging for new created user "Mark". Do as below:
 
-![](../.gitbook/assets/image%20%28120%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 Make sure everything looks all right and then create user:
 
@@ -154,7 +154,7 @@ Make sure everything looks all right and then create user:
 
 ![](../.gitbook/assets/image%20%2833%29.png)
 
-![](../.gitbook/assets/image%20%2894%29.png)
+![](../.gitbook/assets/image%20%2895%29.png)
 
 Quiz: Can you create another users "Andrian" and "James"?
 
@@ -162,9 +162,9 @@ Answer:
 
 ![](../.gitbook/assets/image%20%2821%29.png)
 
-![](../.gitbook/assets/image%20%28119%29.png)
+![](../.gitbook/assets/image%20%28122%29.png)
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28126%29.png)
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
@@ -186,7 +186,7 @@ We've created root user "jeff", and 3 new users that only have policies to acces
 
 ![](../.gitbook/assets/image%20%2835%29.png)
 
-![](../.gitbook/assets/image%20%28121%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 ![](../.gitbook/assets/image%20%2834%29.png)
 
@@ -196,7 +196,7 @@ We've created root user "jeff", and 3 new users that only have policies to acces
 
 到此，"Andrian", "Mark", "James"用户对S3 Bucket的访问权限被解除。Click on "Groups" --&gt; Click on "Create New Group"
 
-![](../.gitbook/assets/image%20%2893%29.png)
+![](../.gitbook/assets/image%20%2894%29.png)
 
 Input the name of your group \("Dev"\) and Click on "Next":
 
@@ -220,7 +220,7 @@ Then Check the users you want to add and click on "Add Users":
 
 ![](../.gitbook/assets/image%20%2855%29.png)
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![](../.gitbook/assets/image%20%28112%29.png)
 
 但是现在，这三个用户并没有权力访问S3 Bucket，所以：Click "Permission" tag --&gt; "Attach Policy":
 
@@ -229,6 +229,22 @@ Then Check the users you want to add and click on "Add Users":
 search "s3" --&gt; check "AmazonS3FullAccess" --&gt; "Attach Policy"
 
 ![](../.gitbook/assets/image%20%2828%29.png)
+
+![](../.gitbook/assets/image%20%28108%29.png)
+
+如果Andrian需要访问多个S3的权限怎么办？一般来说，一个用户最多可以有十几个S3的访问权限。这时，我们可以将Andrian添加到另一个Group中（操作方法与之前的相同\)。
+
+如果我们将Mark从Dev Group中移除会发生什么呢？
+
+![](../.gitbook/assets/image%20%28101%29.png)
+
+我们看到，从Dev Group移除Mark后，Mark就不再有访问Dev Group的权限，从而也就不能访问S3了。同理，如果我们将Mark再添加回Dev Group，那么Mark又重新获得了访问S3 Bucket的权限：
+
+![](../.gitbook/assets/image%20%28108%29.png)
+
+
+
+
 
 
 

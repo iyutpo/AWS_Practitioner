@@ -14,11 +14,11 @@
 
 **VPC**: Virtual Private Cloud. \(**A Virtual Private Cloud is your private section of AWS, where you can place AWS resources, and allow/restrict access to them**.\) 为了理解VPC，我们可以用Facebook来做一个类比。例如，Facebook内部有各个用户的个人主页，每个用户可以对自己的主页设置访问权限。
 
-![](.gitbook/assets/image%20%28125%29.png)
+![](.gitbook/assets/image%20%28128%29.png)
 
 同样的，我们可以将Facebook换成AWS，将homepage换成VPC，如下。用户可以在自己的VPC中部署EC2, RDS等，同时也可以设置隐私权限。
 
-![](.gitbook/assets/image%20%28118%29.png)
+![](.gitbook/assets/image%20%28121%29.png)
 
 **EC2**: Elastic Cloud. 你可以将EC2想象成一个放在你面前的一台计算机，这台计算机有CPU, OS, Hard Drive, Network Card, Firewall, RAM, etc。这里要说一下，**如果你看到了"instance"或"server"，他们都指的是EC2 server**。
 
@@ -42,7 +42,7 @@
 
 AWS **Fault Tolerant**的体现：假设现在有一个EC2宕机了，那么，正在使用这个EC2的用户就不能够继续访问Netflix。此时，AWS会将正在使用宕机了的EC2的用户部署到其他可用的EC2上。然后将宕机的服务器移除，然后重开一个EC2，并将之前被部署的用户重新移回新开的EC2上。（一般来说，上述过程只需几分钟）
 
-![](.gitbook/assets/image%20%28110%29.png)
+![](.gitbook/assets/image%20%28113%29.png)
 
 ![](.gitbook/assets/image%20%2847%29.png)
 
