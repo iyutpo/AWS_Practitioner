@@ -28,9 +28,12 @@
 
 ![](../.gitbook/assets/image%20%2888%29.png)
 
-#### 1.2 现在我们再来看一下AWS EC2的架构：
+#### 1.2 现在我们再来看一下AWS VPC的架构：
 
-
+1. 首先，我们有若干个**EC2 instance**，它们就相当于上一个案例中的Local Devices（如个人电脑，手机等）。
+2. 如果这些EC2 Instance想要访问某个网站，这些访问请求就会进入**Network Access Control List \(NACL\)**，它的功能就相当于一个Firewall，它能让特定的network traffic通过。
+3. 一旦通过了，这些请求就进入**Route Table**（相当于上个案例的Router），从而进入**Internet Gateway**（相当于Modem），再进入**Internet** \(or Internet Service Provider, ISP\)。
+4. 然后**Internet**会将访问到的信息  通过I**nternet Gateway**和**Route Table**返回给**Network Access Control List \(NACL\)**。过滤之后再传送到每个**EC2 Instance**上。
 
 ![](../.gitbook/assets/image%20%28137%29.png)
 
