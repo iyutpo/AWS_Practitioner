@@ -6,4 +6,5 @@
 
 * [Section 1. AWS Basic Navigation](aws_essentials/section-1.-aws-basic-navigation.md)
 * [Section 2. AWS Identity and Access Management \(IAM\)](aws_essentials/section-2.-aws-identity-and-access-management-iam.md)
+* [Section 3. Overview of AWS Network Services](aws_essentials/section-3.-overview-of-aws-network-services.md)
 
