@@ -4,7 +4,7 @@
 
 #### 1.1 VPC \(Virtual Private Cloud\)
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28115%29.png)
 
 类似于Facebook用户的Homepage，我有自己的homepage，我的朋友有他们自己的homepage，每个人只有权力更改自己的homepage。
 
@@ -16,17 +16,17 @@
 4. Router/Switch: 是帮助你链接到网络的设备。它能将网络信号导向到网络中的其他设备上，或者通过Modem将网络信号导向到/导回 Internet Service Provider \(ISP\)
 5. Local Devices: 例如个人电脑，手机等能连接到网络的设备都是Local Devices。
 
-![](../.gitbook/assets/image%20%28132%29.png)
+![](../.gitbook/assets/image%20%28133%29.png)
 
 所以说，如果Modem坏掉，Local Devices和Router就无法连接到ISP。但是Local Devices之间仍然可以通信，因为Router还在工作。
 
 如果Router不工作，那么Local Devices之间失去联系，且无法连接到ISP
 
-![](../.gitbook/assets/image%20%28170%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 在Local Devices和Router之间添加了一个Firewall，Firewall的作用就是识别电脑病毒等有害信息，并将其过滤掉，使得只有安全的信息能被传输到Local Devices上。
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](../.gitbook/assets/image%20%28104%29.png)
 
 #### 1.2 现在我们再来看一下AWS VPC的架构：
 
@@ -35,13 +35,13 @@
 3. 一旦通过了，这些请求就进入**Route Table**（相当于上个案例的Router），从而进入**Internet Gateway**（相当于Modem），再进入**Internet** \(or Internet Service Provider, ISP\)。
 4. 然后**Internet**会将访问到的信息  通过I**nternet Gateway**和**Route Table**返回给**Network Access Control List \(NACL\)**。过滤之后再传送到每个**EC2 Instance**上。
 
-![](../.gitbook/assets/image%20%28161%29.png)
+![](../.gitbook/assets/image%20%28162%29.png)
 
 ## 2. Internet Gateways \(IGW\)
 
 IGW是软件和硬件的组合，它为private network提供了访问Internet Service Provider \(ISP\)的路径和通道。**因此，我们必须保证IGW的high availability和redundancy**。
 
-![](../.gitbook/assets/image%20%28123%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 另外，**当你创建了自己的AWS account后，一个VPC就自动生成了。VPC生成后就会有一个IGW被attach到VPC上**：
 
@@ -61,9 +61,9 @@ IGW是软件和硬件的组合，它为private network提供了访问Internet Se
 
 #### 2.1 Create an Internet Gateway \(IGW\)
 
-![](../.gitbook/assets/image%20%28142%29.png)
+![](../.gitbook/assets/image%20%28143%29.png)
 
-![](../.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28125%29.png)
 
 ## 3. Route Tables \(RTs\)
 
@@ -71,11 +71,11 @@ IGW是软件和硬件的组合，它为private network提供了访问Internet Se
 
 A Route Table contains **a set of rules**, called **routes**, that are used to **determine where network traffic is directed**.
 
-![](../.gitbook/assets/image%20%28147%29.png)
+![](../.gitbook/assets/image%20%28148%29.png)
 
 还记得AWS VPC的架构：
 
-![](../.gitbook/assets/image%20%28161%29.png)
+![](../.gitbook/assets/image%20%28162%29.png)
 
 #### 3.1.1.
 
@@ -91,7 +91,7 @@ A Route Table contains **a set of rules**, called **routes**, that are used to *
 
 **思考：如果我们将Internet Gateway从VPC上detach下来会怎样？（如下图）**
 
-![](../.gitbook/assets/image%20%28101%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
 这种情况就非常像，我们家里的Modem坏掉了，所有家中的设备之间可以正常通信，但是不能连接到Internet Service Provider。
 
@@ -113,11 +113,11 @@ A Route Table contains **a set of rules**, called **routes**, that are used to *
 
 Click "Internet Gateways" --&gt; Right Click on "detach" of "EssentialsIGW" gateway --&gt; Click on "Attach to VPC" --&gt; Select VPC "vpc-6554f81f" \(Your VPC ID may be different from mine\) --&gt; Click "Attach" button, then the State will turn to "attached":
 
-![](../.gitbook/assets/image%20%28126%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
-![](../.gitbook/assets/image%20%28112%29.png)
+![](../.gitbook/assets/image%20%28113%29.png)
 
-![](../.gitbook/assets/image%20%28110%29.png)
+![](../.gitbook/assets/image%20%28111%29.png)
 
 此时我们返回"Route Tables" --&gt; "Routes"，发现0.0.0.0/0的State还是"blackhole"。为了能用新建的“EssentialsIGW” gateway来控制当前的VPC，我们要Click "Edit routes" button --&gt; Click "Cross" icon --&gt; Click "Add route" button --&gt; Type "0.0.0.0/0" in "Destination" --&gt; Type and search IGW \(i.e. EssentialsIGW\) --&gt; Click "Save routes" button
 
@@ -131,11 +131,21 @@ Click "Internet Gateways" --&gt; Right Click on "detach" of "EssentialsIGW" gate
 
 这时候，我们就用"EssentialsIGW" gateway替换了之前默认的gateway。
 
-![](../.gitbook/assets/image%20%28152%29.png)
+![](../.gitbook/assets/image%20%28153%29.png)
 
 再看一眼Route Tables下面的Routes State，发现原来的"blackhole"变成了“Active”，说明新的Gateway 被成功attach到当前VPC上了：
 
-![](../.gitbook/assets/image%20%28144%29.png)
+![](../.gitbook/assets/image%20%28145%29.png)
+
+总结一下：
+
+1. 默认的VPC会自带一个**main route table**
+2. 在一个VPC中，可以有多个active的route table，但是能有一个active（attached）的Gateway
+3. 当一个route table被有子网（subnet）时，该route table不能被删除
+
+![](../.gitbook/assets/image%20%2862%29.png)
+
+
 
 
 
