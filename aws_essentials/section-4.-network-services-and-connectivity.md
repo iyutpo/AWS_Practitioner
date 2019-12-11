@@ -272,6 +272,8 @@ Click "Outbound Rules" --&gt; Click "Add outbound rules" --&gt; Click "Add Rule"
 
 ![](../.gitbook/assets/image%20%28219%29.png)
 
+## 5. Subnets
+
 
 
 
