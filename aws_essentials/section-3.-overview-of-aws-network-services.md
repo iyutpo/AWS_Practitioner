@@ -12,7 +12,7 @@ So AWS has regions in various locations around the world and within each region 
 
 ![](../.gitbook/assets/image%20%2838%29.png)
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](../.gitbook/assets/image%20%2894%29.png)
 
 
 
