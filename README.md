@@ -14,11 +14,11 @@
 
 **VPC**: Virtual Private Cloud. \(**A Virtual Private Cloud is your private section of AWS, where you can place AWS resources, and allow/restrict access to them**.\) 为了理解VPC，我们可以用Facebook来做一个类比。例如，Facebook内部有各个用户的个人主页，每个用户可以对自己的主页设置访问权限。
 
-![](.gitbook/assets/image%20%28269%29.png)
+![](.gitbook/assets/image%20%28271%29.png)
 
 同样的，我们可以将Facebook换成AWS，将homepage换成VPC，如下。用户可以在自己的VPC中部署EC2, RDS等，同时也可以设置隐私权限。
 
-![](.gitbook/assets/image%20%28260%29.png)
+![](.gitbook/assets/image%20%28262%29.png)
 
 **EC2**: Elastic Cloud. 你可以将EC2想象成一个放在你面前的一台计算机，这台计算机有CPU, OS, Hard Drive, Network Card, Firewall, RAM, etc。这里要说一下，**如果你看到了"instance"或"server"，他们都指的是EC2 server**。
 
@@ -26,13 +26,13 @@
 
 **RDS**: Database provided by AWS. The usage of RDS is to store customer info. 例如，我们在Netflix上申请了一个账号，那么这个账号的信息就会被存入Netflix的VPC下面的RDS。当用户想要获取账号信息时，就能直接通过EC2获得。
 
-![](.gitbook/assets/image%20%28174%29.png)
+![](.gitbook/assets/image%20%28175%29.png)
 
 
 
 我们知道，对于Netflix这样的网站来说，在一天中的某一特定时间段内会有很多用户。例如晚上8点钟。这时候，如果Netflix公司使用了on-premise server，那么很有可能会造成该server的宕机。但是，如果Netflix公司使用了AWS，那么随着该时段内的活跃用户量的增加，AWS会自动添加一个新的EC2，以防服务器宕机，从而所有用户可以同时访问RDS，这也是AWS的scalability的体现：
 
-![](.gitbook/assets/image%20%28182%29.png)
+![](.gitbook/assets/image%20%28183%29.png)
 
 同理，随着午夜用户量的减少，AWS也会自动减少EC2的数量，这也是AWS的elasticity的体现：
 
@@ -42,7 +42,7 @@
 
 AWS **Fault Tolerant**的体现：假设现在有一个EC2宕机了，那么，正在使用这个EC2的用户就不能够继续访问Netflix。此时，AWS会将正在使用宕机了的EC2的用户部署到其他可用的EC2上。然后将宕机的服务器移除，然后重开一个EC2，并将之前被部署的用户重新移回新开的EC2上。（一般来说，上述过程只需几分钟）
 
-![](.gitbook/assets/image%20%28245%29.png)
+![](.gitbook/assets/image%20%28246%29.png)
 
 ![](.gitbook/assets/image%20%28101%29.png)
 

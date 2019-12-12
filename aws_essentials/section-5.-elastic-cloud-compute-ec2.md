@@ -12,7 +12,7 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 一个EC2就类似于一个计算机，可能有操作系统，CPU，RAM，硬盘，网卡，防火墙等
 
-![](../.gitbook/assets/image%20%28170%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 ![](../.gitbook/assets/image%20%2873%29.png)
 
@@ -36,11 +36,11 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
    4. 只有在你的竞价高于Spot价格时，你才能使用该EC2
    5. 当你的竞价被Spot价格超过，你使用该EC2的权限会自动被终止
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28172%29.png)
 
 ### 1.3. Pricing/Cost Overview
 
-![](../.gitbook/assets/image%20%28244%29.png)
+![](../.gitbook/assets/image%20%28245%29.png)
 
 ## 2. Amazon Machine Image \(AMI\):
 
@@ -50,7 +50,7 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 **AWS definition**: **An AMI provides the information required to launch an instance**, which is virtual server in the cloud. You specify an AMI when you launch an instance, and you can launch as many instances from the AMI as you need. You can also launch instances from as many different AMIs as you need.
 
-![](../.gitbook/assets/image%20%28219%29.png)
+![](../.gitbook/assets/image%20%28220%29.png)
 
 ### 2.2. Understanding AMIs:
 
@@ -63,7 +63,7 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 3. Block Device Mapping。又包含：
    1. EBS \(hard drive mapping\)
 
-![](../.gitbook/assets/image%20%28239%29.png)
+![](../.gitbook/assets/image%20%28240%29.png)
 
 当我们购买了一个Linux EC2 Instance之后，就会有一个与该Linux EC2 Instance相关的AMI被创建（名为"My Linux EC2 Instance \#1"）。之后我们可以用这个被创建的AMI来部署多个具有相同配置的Linux EC2 Instance：（好处就是我们不需要花很多时间安装操作系统和软件）
 
@@ -82,15 +82,15 @@ AMI一共有三类：
 3. My AMI：
    1. 这种是我们自己创建的AMI
 
-![](../.gitbook/assets/image%20%28202%29.png)
+![](../.gitbook/assets/image%20%28203%29.png)
 
-### 6.3. 创建AMI步骤：
+### 2.3. 创建AMI步骤：
 
-#### 6.3.1
+#### 2.3.1
 
 Enter "EC2 Dashboard" --&gt; Click "Launch Instance"，你会看到Amazon提供的AMI
 
-![](../.gitbook/assets/image%20%28207%29.png)
+![](../.gitbook/assets/image%20%28208%29.png)
 
 ![](../.gitbook/assets/image%20%2855%29.png)
 
@@ -98,17 +98,27 @@ Enter "EC2 Dashboard" --&gt; Click "Launch Instance"，你会看到Amazon提供�
 
 我们还可以Click "Community AMIs"：你会发现这里提供的AMI都没有预装软件，只有操作系统。它们是免费的。
 
-![](../.gitbook/assets/image%20%28206%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 我们再Click "AWS Marketplace"：就会看到正在AWS上提供software的厂商。如果我们需要自己创建AMI的话，通常需要在这里购买相关软件，并付费。购买了软件后，在"My AMIs"中就会出现已经购买的软件的列表。（我暂时没买，所以列表为空）
 
-![](../.gitbook/assets/image%20%28259%29.png)
+![](../.gitbook/assets/image%20%28261%29.png)
 
 ![](../.gitbook/assets/image%20%28107%29.png)
 
+## 3. Instance Type
 
+### 3.1 Definition of Instance Type:
 
+The Instance Type is the CPU of your instance.
 
+AWS definition: When you launch an instance, the instance type that you specify determines the hardware of the host computer used for your instance. Each instance type offers different compute, memory, and storage capabilities and are grouped in instance families based on these capabilities. Select an instance type based on the requirements of the application or software that you plan to run on your instance.
+
+![](../.gitbook/assets/image%20%28259%29.png)
+
+### 3.2. Instance Types Components:
+
+![](../.gitbook/assets/image%20%28169%29.png)
 
 
 
