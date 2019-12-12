@@ -12,9 +12,9 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 一个EC2就类似于一个计算机，可能有操作系统，CPU，RAM，硬盘，网卡，防火墙等
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
-![](../.gitbook/assets/image%20%2872%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
 ### 1.2. EC2 Instance Purchasing Options:
 
@@ -36,27 +36,75 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
    4. 只有在你的竞价高于Spot价格时，你才能使用该EC2
    5. 当你的竞价被Spot价格超过，你使用该EC2的权限会自动被终止
 
-![](../.gitbook/assets/image%20%28168%29.png)
+![](../.gitbook/assets/image%20%28171%29.png)
 
 ### 1.3. Pricing/Cost Overview
 
-![](../.gitbook/assets/image%20%28236%29.png)
+![](../.gitbook/assets/image%20%28244%29.png)
 
+## 2. Amazon Machine Image \(AMI\):
 
+### 2.1. Definition of AMI:
 
+**AMI is a preconfigured package required to launch an EC2 instance that includes an operating system, software packages and other required settings**.
 
+**AWS definition**: **An AMI provides the information required to launch an instance**, which is virtual server in the cloud. You specify an AMI when you launch an instance, and you can launch as many instances from the AMI as you need. You can also launch instances from as many different AMIs as you need.
 
+![](../.gitbook/assets/image%20%28219%29.png)
 
+### 2.2. Understanding AMIs:
 
+**AMI包含：**
 
+1. Root Volume Template. Root volume template又包含：
+   1. Operating System。如果我们购买了一个Linux EC2 Instance，那么该EC2的操作系统就是Linux
+   2. Application Software。如果我们购买的EC2 Instance中有Apache web server，那么其中一个application software就是Apache web server
+2. Launch Permissions
+3. Block Device Mapping。又包含：
+   1. EBS \(hard drive mapping\)
 
+![](../.gitbook/assets/image%20%28239%29.png)
 
+当我们购买了一个Linux EC2 Instance之后，就会有一个与该Linux EC2 Instance相关的AMI被创建（名为"My Linux EC2 Instance \#1"）。之后我们可以用这个被创建的AMI来部署多个具有相同配置的Linux EC2 Instance：（好处就是我们不需要花很多时间安装操作系统和软件）
 
+![](../.gitbook/assets/image%20%28114%29.png)
 
+#### 2.2.1. 当启动EC2 Instance之前，我们要先选一个AMI。如何选择AMI呢？
 
+AMI一共有三类：
 
+1. Community AMI：
+   1. 免费
+   2. 使用这类AMI时，你只能选择你需要的操作系统
+2. AWS Marketplace AMI：
+   1. 付费
+   2. 通常会有一些package和带有证书的software
+3. My AMI：
+   1. 这种是我们自己创建的AMI
 
+![](../.gitbook/assets/image%20%28202%29.png)
 
+### 6.3. 创建AMI步骤：
+
+#### 6.3.1
+
+Enter "EC2 Dashboard" --&gt; Click "Launch Instance"，你会看到Amazon提供的AMI
+
+![](../.gitbook/assets/image%20%28207%29.png)
+
+![](../.gitbook/assets/image%20%2855%29.png)
+
+例如，上面一幅图中的第二个AMI（Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4）不仅说明了操作系统，硬件配置，而且说明了该AMI上的预装软件（Python, Java, Ruby, PostgreSQL, MySQL, etc）。
+
+我们还可以Click "Community AMIs"：你会发现这里提供的AMI都没有预装软件，只有操作系统。它们是免费的。
+
+![](../.gitbook/assets/image%20%28206%29.png)
+
+我们再Click "AWS Marketplace"：就会看到正在AWS上提供software的厂商。如果我们需要自己创建AMI的话，通常需要在这里购买相关软件，并付费。购买了软件后，在"My AMIs"中就会出现已经购买的软件的列表。（我暂时没买，所以列表为空）
+
+![](../.gitbook/assets/image%20%28259%29.png)
+
+![](../.gitbook/assets/image%20%28107%29.png)
 
 
 
