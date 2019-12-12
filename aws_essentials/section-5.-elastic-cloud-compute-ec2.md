@@ -129,11 +129,20 @@ Click "Quick Start" --&gt; Click "Select" button of "Amazon Linux AMI 2018.03.0 
 进来之后你会发现有若干列：
 
 * “Family”是描述当前Instance在哪个方面被优化过。如果你scroll down，就会发现有"Compute optimized", "Storage optimized"等。
-* “Type”是“am
+* “Type”是“Family”的子类
+* vCPU，Memory，Instance Storage很容易理解，不赘述
+* EBS-Optimized Available：描述当前的Instance是否可以进行EBS优化选项
+* Network Performance：网络性能。是根据数据传输速度（也就是带宽）来评价的。
 
 ![](../.gitbook/assets/image%20%28252%29.png)
 
+## 4. EBS \(Elastic Block Store\)
 
+### 4.1. Definition of EBS:
+
+EBS is a storage volume for an EC2 Instance \(You can think EBS as a hard drive\).
+
+AWS Definition: AWS EBS provides block level storage volumes for use with EC2 Instances. **EBS volumes are highly available and reliable storage volumes that can be attached to any running instance that is in the same Availability Zone.** **EBS volumes that are attached to an EC2 Instance are exposed  as storage volumes that persist independently from the life of the instance**.
 
 
 
