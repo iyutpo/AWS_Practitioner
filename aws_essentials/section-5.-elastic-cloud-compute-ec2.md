@@ -8,13 +8,13 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 我们很好理解我们需要as many virtual servers as possible，但什么时候需要as few virtual servers as we need？例子就是，一个电商平台，当购物淡季时通常不需要很多的server，这时，降低server的数量就能降低维护成本。
 
-![](../.gitbook/assets/image%20%2850%29.png)
+![](../.gitbook/assets/image%20%2852%29.png)
 
 一个EC2就类似于一个计算机，可能有操作系统，CPU，RAM，硬盘，网卡，防火墙等
 
-![](../.gitbook/assets/image%20%28173%29.png)
+![](../.gitbook/assets/image%20%28187%29.png)
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 ### 1.2. EC2 Instance Purchasing Options:
 
@@ -36,11 +36,11 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
    4. 只有在你的竞价高于Spot价格时，你才能使用该EC2
    5. 当你的竞价被Spot价格超过，你使用该EC2的权限会自动被终止
 
-![](../.gitbook/assets/image%20%28174%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
 ### 1.3. Pricing/Cost Overview
 
-![](../.gitbook/assets/image%20%28248%29.png)
+![](../.gitbook/assets/image%20%28265%29.png)
 
 ## 2. Amazon Machine Image \(AMI\):
 
@@ -50,7 +50,7 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 **AWS definition**: **An AMI provides the information required to launch an instance**, which is virtual server in the cloud. You specify an AMI when you launch an instance, and you can launch as many instances from the AMI as you need. You can also launch instances from as many different AMIs as you need.
 
-![](../.gitbook/assets/image%20%28222%29.png)
+![](../.gitbook/assets/image%20%28237%29.png)
 
 ### 2.2. Understanding AMIs:
 
@@ -63,11 +63,11 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 3. Block Device Mapping。又包含：
    1. EBS \(hard drive mapping\)
 
-![](../.gitbook/assets/image%20%28243%29.png)
+![](../.gitbook/assets/image%20%28260%29.png)
 
 当我们购买了一个Linux EC2 Instance之后，就会有一个与该Linux EC2 Instance相关的AMI被创建（名为"My Linux EC2 Instance \#1"）。之后我们可以用这个被创建的AMI来部署多个具有相同配置的Linux EC2 Instance：（好处就是我们不需要花很多时间安装操作系统和软件）
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28124%29.png)
 
 #### 2.2.1. 当启动EC2 Instance之前，我们要先选一个AMI。如何选择AMI呢？
 
@@ -82,7 +82,7 @@ AMI一共有三类：
 3. My AMI：
    1. 这种是我们自己创建的AMI
 
-![](../.gitbook/assets/image%20%28205%29.png)
+![](../.gitbook/assets/image%20%28220%29.png)
 
 ### 2.3. 创建AMI步骤：
 
@@ -90,21 +90,21 @@ AMI一共有三类：
 
 Enter "EC2 Dashboard" --&gt; Click "Launch Instance"，你会看到Amazon提供的AMI
 
-![](../.gitbook/assets/image%20%28210%29.png)
+![](../.gitbook/assets/image%20%28225%29.png)
 
-![](../.gitbook/assets/image%20%2855%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 例如，上面一幅图中的第二个AMI（Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4）不仅说明了操作系统，硬件配置，而且说明了该AMI上的预装软件（Python, Java, Ruby, PostgreSQL, MySQL, etc）。
 
 我们还可以Click "Community AMIs"：你会发现这里提供的AMI都没有预装软件，只有操作系统。它们是免费的。
 
-![](../.gitbook/assets/image%20%28209%29.png)
+![](../.gitbook/assets/image%20%28224%29.png)
 
 我们再Click "AWS Marketplace"：就会看到正在AWS上提供software的厂商。如果我们需要自己创建AMI的话，通常需要在这里购买相关软件，并付费。购买了软件后，在"My AMIs"中就会出现已经购买的软件的列表。（我暂时没买，所以列表为空）
 
-![](../.gitbook/assets/image%20%28266%29.png)
+![](../.gitbook/assets/image%20%28287%29.png)
 
-![](../.gitbook/assets/image%20%28108%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 ## 3. Instance Type
 
@@ -114,17 +114,17 @@ The Instance Type is the CPU of your instance.
 
 AWS definition: When you launch an instance, the instance type that you specify determines the hardware of the host computer used for your instance. Each instance type offers different compute, memory, and storage capabilities and are grouped in instance families based on these capabilities. Select an instance type based on the requirements of the application or software that you plan to run on your instance.
 
-![](../.gitbook/assets/image%20%28264%29.png)
+![](../.gitbook/assets/image%20%28284%29.png)
 
 ### 3.2. Instance Types Components:
 
-![](../.gitbook/assets/image%20%28171%29.png)
+![](../.gitbook/assets/image%20%28185%29.png)
 
 #### 3.2.1.
 
 Click "Quick Start" --&gt; Click "Select" button of "Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4"：
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2874%29.png)
 
 进来之后你会发现有若干列：
 
@@ -134,7 +134,9 @@ Click "Quick Start" --&gt; Click "Select" button of "Amazon Linux AMI 2018.03.0 
 * EBS-Optimized Available：描述当前的Instance是否可以进行EBS优化选项
 * Network Performance：网络性能。是根据数据传输速度（也就是带宽）来评价的。
 
-![](../.gitbook/assets/image%20%28254%29.png)
+![](../.gitbook/assets/image%20%28272%29.png)
+
+（上图只是帮助你了解各种Instance Type和各个列的意义，并没有创建或启动任何Instance）
 
 ## 4. EBS \(Elastic Block Store\)
 
@@ -144,7 +146,7 @@ EBS is a storage volume for an EC2 Instance \(You can think EBS as a hard drive\
 
 AWS Definition: AWS EBS provides block level storage volumes for use with EC2 Instances. **EBS volumes are highly available and reliable storage volumes that can be attached to any running instance that is in the same Availability Zone.** **EBS volumes that are attached to an EC2 Instance are exposed  as storage volumes that persist independently from the life of the instance**.
 
-![](../.gitbook/assets/image%20%28238%29.png)
+![](../.gitbook/assets/image%20%28254%29.png)
 
 #### 4.1.1. 在我们进一步讲解EBS之前，先来看一下什么是IOPS：
 
@@ -156,33 +158,110 @@ AWS IOPS definition: IOPS are unit of measure representing input/output operatio
 
 **IOPS的数量是由EBS volume的大小决定的。EBS volume越大，IOPS数量越多，读写速度越快**
 
-![](../.gitbook/assets/image%20%28257%29.png)
+![](../.gitbook/assets/image%20%28276%29.png)
 
 ### 4.2. EBS
 
-Root vs. Additional EBS Volumes:
+Root vs. Additional EBS Volumes: 
 
+1. 每个EC2 instance必须有一个根目录（root volume），root volume可以是也可以不是EBS
+2. 默认地，当instance终止后，EBS root volume会被删除。但是instance终止后，你仍可以选择保有若干个EBS volume。
+3. 在创建EC2 Instance的过程中，你可以将其他的EBS volume添加到当前的EC2 instance上
+4. 任何其他的volume都可以随时被attach或detach，并且这些volume在EC2 Instance被终止后不会被删除：
 
+![](../.gitbook/assets/image%20%28163%29.png)
 
-![](../.gitbook/assets/image%20%28150%29.png)
+### 4.3. 我们来操作一下：
 
+#### 4.3.1.
 
+Click "Next: Configure Instance Details" --&gt; Click "Add Storage" --&gt; Click "Next: Add Tags" --&gt; Click "Cancel" \(We're not going to create\)
 
+![](../.gitbook/assets/image%20%28278%29.png)
 
+![](../.gitbook/assets/image%20%2897%29.png)
 
+![](../.gitbook/assets/image%20%2854%29.png)
 
+#### 4.3.2. Create Volume
 
+Enter "EC2 Dashboard" --&gt; Click "Volumes" --&gt; Click "Create Volume" --&gt; You'll see the second picture below \(We'll talk about **snapshot** in the following section\) --&gt; Click "Cancel"
 
+![](../.gitbook/assets/image%20%2879%29.png)
 
+![](../.gitbook/assets/image%20%28274%29.png)
 
+#### 4.3.3. Additional EBS Volume和Root Volume的区别：
 
+Additional EBS Volume可以被随时attach或detach到任意的EC2 Instance上。这就有点类似于U盘，你可以随时插入任意一台电脑（EC2 Instance）。
 
+![](../.gitbook/assets/image%20%2881%29.png)
 
+#### 4.3.4. Snapshot : 
 
+1. is an image of an EBS volume that can be **stored as a backup of the volume or used to create a duplicate**. （Snapshot是用来作为EBS磁盘卷\(EBS volume\)的备份  的）
+2. **Snapshot is not an active EBS volume**. You cannot attach or detach a snapshot to an EC2 instance.
+3. **To restore a snapshot, you need to create a new EBS volume using the snapshot as its template**.
 
+![](../.gitbook/assets/image%20%28174%29.png)
 
+## 5. Security Groups
 
+### 5.1 Definition of Security Groups:
 
+Security Groups are very similar to NACLs. They allow or deny network traffic. However, security groups are found on the instance level \(as opposed to the subnet level\). In addition, the way allow/deny rules work are different from NACLs.
+
+AWS definition: **A security group acts as a virtual firewall that controls the network traffic for one or more instances. When you launch an instance, you associate one or more security groups with the instance.** You add rules to each security group that allow traffic to or from its associated instances. You can modify the rules for a security group at any time. The new rules are automatically applied to all instances that are associated with the security group. When we decide whether to allow traffic to reach an instance, we evaluate all the rules from all the security groups that are associated with the instance.
+
+**Security Groups很像NACL，都是用来限制network traffic进出EC2 Instance的。但是NACL是从subnet层面对traffic进行限制，而Security Groups是从EC2 Instance层面上对traffic进行限制的。另外一点不同是，我们可以对NACL创建DENY Rules，但是不能对Security Groups创建DENY Rules**。
+
+![](../.gitbook/assets/image%20%28266%29.png)
+
+### 5.2. Understanding How Security Groups Work
+
+ELB \(Elastic Load Balancer\)：作用是接受从Internet Gateway传入的信号，并在各个EC2 Instance之间，对该信号进行负载均衡（load balance）。所以ELB就决定着一个信号会被传向哪个EC2 Instance。
+
+![](../.gitbook/assets/image%20%28131%29.png)
+
+所以，我们通常需要保证左右两个EC2 Instance的Security Group有相同的Rule（i.e. 他们的Rule要允许/阻挡的信号是相同的）。否则，可能会出现：对于一个相同的信号，EC2 Instance 1收到了，但EC2 Instance 2没收到的现象。
+
+对于Security Groups，默认上，所有的inbound traffic都被DENY，所有outbound traffic都被ALLOW：（见下图，中间蓝框就是EC2 Instance 1的Security Group）
+
+![](../.gitbook/assets/image%20%28153%29.png)
+
+### 5.3. 如何使用 \(How to use and set Security Groups\)
+
+#### 5.3.1.
+
+Enter "EC2 Dashboard" --&gt; Click "Security Groups" --&gt; Check Security Group named as "default" --&gt; Click "Inbound" and "Outbound" respectively. 你会发现所有inbound和outbound traffic都是ALLOW的：default security group是在你创建了EC2 Instance之后自动被创建的（如果你没有其他4个Security Group没关系，我们只看default Security Group）。
+
+![](../.gitbook/assets/image%20%28127%29.png)
+
+![](../.gitbook/assets/image%20%28257%29.png)
+
+#### 5.3.2. Create a new Security Group:
+
+Click "Create Security Group" --&gt; You'll see the second picture below \(All inbound traffic is not allowed \(denied\) by default\) --&gt; You'll also see the third picture below \(All outbound traffic is allowed by default\) 
+
+![](../.gitbook/assets/image%20%2882%29.png)
+
+![](../.gitbook/assets/image%20%28246%29.png)
+
+![](../.gitbook/assets/image%20%28215%29.png)
+
+#### 5.3.3. Add Traffic Rules for Security Group:
+
+Click "Add Rule" --&gt; Select "HTTP" under "Type" tag.你会发现你没有权利对当前的Security Group Inbound Rule进行DENY的设置（不需要点"Create"）
+
+![](../.gitbook/assets/image%20%2837%29.png)
+
+如果点击"Create"按钮之后，我们的VPC结构就如下图所示：此时，右边的Subnet2中有我们默认（default）的Security Group \(SG\)，它不允许任何traffic进入EC2 Instance 2。左边的Subnet1是自定义的Security Group，允许HTTP traffic进入EC2 Instance 1。
+
+![](../.gitbook/assets/image%20%28116%29.png)
+
+所以上面的例子能看出，NACLs是stateless的，而Security Group是stateful的。
+
+**Stateful是指，即使该Security Group中没有匹配的Outbound Rules，任何被允许进入Security Group的traffic都将自动被允许返回其源\(e.g. EC2 Instance, etc\)。这与NACL不同，在NACL中，如果没有创建允许该traffic的Outbound Rules，它将在NACL中被拒绝。**（Stateful means that any network traffic that is allowed to enter into a security group is automatically allowed to return its source, even if there's not a matching outbound rule in that security group. This is different from NACLs, which means that without an outbound rule created to allow that traffic , it would be denied at the NACL.）
 
 
 
