@@ -8,13 +8,13 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 我们很好理解我们需要as many virtual servers as possible，但什么时候需要as few virtual servers as we need？例子就是，一个电商平台，当购物淡季时通常不需要很多的server，这时，降低server的数量就能降低维护成本。
 
-![](../.gitbook/assets/image%20%2857%29.png)
+![](../.gitbook/assets/image%20%2858%29.png)
 
 一个EC2就类似于一个计算机，可能有操作系统，CPU，RAM，硬盘，网卡，防火墙等
 
-![](../.gitbook/assets/image%20%28228%29.png)
+![](../.gitbook/assets/image%20%28233%29.png)
 
-![](../.gitbook/assets/image%20%2894%29.png)
+![](../.gitbook/assets/image%20%2896%29.png)
 
 ### 1.2. EC2 Instance Purchasing Options:
 
@@ -36,11 +36,11 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
    4. 只有在你的竞价高于Spot价格时，你才能使用该EC2
    5. 当你的竞价被Spot价格超过，你使用该EC2的权限会自动被终止
 
-![](../.gitbook/assets/image%20%28231%29.png)
+![](../.gitbook/assets/image%20%28236%29.png)
 
 ### 1.3. Pricing/Cost Overview
 
-![](../.gitbook/assets/image%20%28321%29.png)
+![](../.gitbook/assets/image%20%28329%29.png)
 
 ## 2. Amazon Machine Image \(AMI\):
 
@@ -50,7 +50,7 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 
 **AWS definition**: **An AMI provides the information required to launch an instance**, which is virtual server in the cloud. You specify an AMI when you launch an instance, and you can launch as many instances from the AMI as you need. You can also launch instances from as many different AMIs as you need.
 
-![](../.gitbook/assets/image%20%28291%29.png)
+![](../.gitbook/assets/image%20%28299%29.png)
 
 ### 2.2. Understanding AMIs:
 
@@ -63,11 +63,11 @@ EC2 is like a computer. It provides scalable computing capacity in the AWS cloud
 3. Block Device Mapping。又包含：
    1. EBS \(hard drive mapping\)
 
-![](../.gitbook/assets/image%20%28315%29.png)
+![](../.gitbook/assets/image%20%28323%29.png)
 
 当我们购买了一个Linux EC2 Instance之后，就会有一个与该Linux EC2 Instance相关的AMI被创建（名为"My Linux EC2 Instance \#1"）。之后我们可以用这个被创建的AMI来部署多个具有相同配置的Linux EC2 Instance：（好处就是我们不需要花很多时间安装操作系统和软件）
 
-![](../.gitbook/assets/image%20%28154%29.png)
+![](../.gitbook/assets/image%20%28157%29.png)
 
 #### 2.2.1. 当启动EC2 Instance之前，我们要先选一个AMI。如何选择AMI呢？
 
@@ -82,7 +82,7 @@ AMI一共有三类：
 3. My AMI：
    1. 这种是我们自己创建的AMI
 
-![](../.gitbook/assets/image%20%28270%29.png)
+![](../.gitbook/assets/image%20%28277%29.png)
 
 ### 2.3. 创建AMI步骤：
 
@@ -90,21 +90,21 @@ AMI一共有三类：
 
 Enter "EC2 Dashboard" --&gt; Click "Launch Instance"，你会看到Amazon提供的AMI
 
-![](../.gitbook/assets/image%20%28277%29.png)
+![](../.gitbook/assets/image%20%28284%29.png)
 
-![](../.gitbook/assets/image%20%2864%29.png)
+![](../.gitbook/assets/image%20%2866%29.png)
 
 例如，上面一幅图中的第二个AMI（Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4）不仅说明了操作系统，硬件配置，而且说明了该AMI上的预装软件（Python, Java, Ruby, PostgreSQL, MySQL, etc）。
 
 我们还可以Click "Community AMIs"：你会发现这里提供的AMI都没有预装软件，只有操作系统。它们是免费的。
 
-![](../.gitbook/assets/image%20%28276%29.png)
+![](../.gitbook/assets/image%20%28283%29.png)
 
 我们再Click "AWS Marketplace"：就会看到正在AWS上提供software的厂商。如果我们需要自己创建AMI的话，通常需要在这里购买相关软件，并付费。购买了软件后，在"My AMIs"中就会出现已经购买的软件的列表。（我暂时没买，所以列表为空）
 
-![](../.gitbook/assets/image%20%28347%29.png)
+![](../.gitbook/assets/image%20%28355%29.png)
 
-![](../.gitbook/assets/image%20%28144%29.png)
+![](../.gitbook/assets/image%20%28147%29.png)
 
 ## 3. Instance Type
 
@@ -114,17 +114,17 @@ The Instance Type is the CPU of your instance.
 
 AWS definition: When you launch an instance, the instance type that you specify determines the hardware of the host computer used for your instance. Each instance type offers different compute, memory, and storage capabilities and are grouped in instance families based on these capabilities. Select an instance type based on the requirements of the application or software that you plan to run on your instance.
 
-![](../.gitbook/assets/image%20%28344%29.png)
+![](../.gitbook/assets/image%20%28352%29.png)
 
 ### 3.2. Instance Types Components:
 
-![](../.gitbook/assets/image%20%28226%29.png)
+![](../.gitbook/assets/image%20%28231%29.png)
 
 #### 3.2.1.
 
 Click "Quick Start" --&gt; Click "Select" button of "Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4"：
 
-![](../.gitbook/assets/image%20%2891%29.png)
+![](../.gitbook/assets/image%20%2893%29.png)
 
 进来之后你会发现有若干列：
 
@@ -134,7 +134,7 @@ Click "Quick Start" --&gt; Click "Select" button of "Amazon Linux AMI 2018.03.0 
 * EBS-Optimized Available：描述当前的Instance是否可以进行EBS优化选项
 * Network Performance：网络性能。是根据数据传输速度（也就是带宽）来评价的。
 
-![](../.gitbook/assets/image%20%28329%29.png)
+![](../.gitbook/assets/image%20%28337%29.png)
 
 （上图只是帮助你了解各种Instance Type和各个列的意义，并没有创建或启动任何Instance）
 
@@ -146,7 +146,7 @@ EBS is a storage volume for an EC2 Instance \(You can think EBS as a hard drive\
 
 AWS Definition: AWS EBS provides block level storage volumes for use with EC2 Instances. **EBS volumes are highly available and reliable storage volumes that can be attached to any running instance that is in the same Availability Zone.** **EBS volumes that are attached to an EC2 Instance are exposed  as storage volumes that persist independently from the life of the instance**.
 
-![](../.gitbook/assets/image%20%28309%29.png)
+![](../.gitbook/assets/image%20%28317%29.png)
 
 #### 4.1.1. 在我们进一步讲解EBS之前，先来看一下什么是IOPS：
 
@@ -158,7 +158,7 @@ AWS IOPS definition: IOPS are unit of measure representing input/output operatio
 
 **IOPS的数量是由EBS volume的大小决定的。EBS volume越大，IOPS数量越多，读写速度越快**
 
-![](../.gitbook/assets/image%20%28335%29.png)
+![](../.gitbook/assets/image%20%28343%29.png)
 
 ### 4.2. EBS
 
@@ -169,7 +169,7 @@ Root vs. Additional EBS Volumes:
 3. 在创建EC2 Instance的过程中，你可以将其他的EBS volume添加到当前的EC2 instance上
 4. 任何其他的volume都可以随时被attach或detach，并且这些volume在EC2 Instance被终止后不会被删除：
 
-![](../.gitbook/assets/image%20%28202%29.png)
+![](../.gitbook/assets/image%20%28207%29.png)
 
 ### 4.3. 我们来操作一下：
 
@@ -177,25 +177,25 @@ Root vs. Additional EBS Volumes:
 
 Click "Next: Configure Instance Details" --&gt; Click "Add Storage" --&gt; Click "Next: Add Tags" --&gt; Click "Cancel" \(We're not going to create\)
 
-![](../.gitbook/assets/image%20%28338%29.png)
+![](../.gitbook/assets/image%20%28346%29.png)
 
-![](../.gitbook/assets/image%20%28119%29.png)
+![](../.gitbook/assets/image%20%28122%29.png)
 
-![](../.gitbook/assets/image%20%2859%29.png)
+![](../.gitbook/assets/image%20%2860%29.png)
 
 #### 4.3.2. Create Volume
 
 Enter "EC2 Dashboard" --&gt; Click "Volumes" --&gt; Click "Create Volume" --&gt; You'll see the second picture below \(We'll talk about **snapshot** in the following section\) --&gt; Click "Cancel"
 
-![](../.gitbook/assets/image%20%2897%29.png)
+![](../.gitbook/assets/image%20%2899%29.png)
 
-![](../.gitbook/assets/image%20%28331%29.png)
+![](../.gitbook/assets/image%20%28339%29.png)
 
 #### 4.3.3. Additional EBS Volume和Root Volume的区别：
 
 Additional EBS Volume可以被随时attach或detach到任意的EC2 Instance上。这就有点类似于U盘，你可以随时插入任意一台电脑（EC2 Instance）。
 
-![](../.gitbook/assets/image%20%2899%29.png)
+![](../.gitbook/assets/image%20%28101%29.png)
 
 #### 4.3.4. Snapshot : 
 
@@ -203,7 +203,7 @@ Additional EBS Volume可以被随时attach或detach到任意的EC2 Instance上�
 2. **Snapshot is not an active EBS volume**. You cannot attach or detach a snapshot to an EC2 instance.
 3. **To restore a snapshot, you need to create a new EBS volume using the snapshot as its template**.
 
-![](../.gitbook/assets/image%20%28213%29.png)
+![](../.gitbook/assets/image%20%28218%29.png)
 
 ## 5. Security Groups
 
@@ -215,19 +215,19 @@ AWS definition: **A security group acts as a virtual firewall that controls the 
 
 **Security Groups很像NACL，都是用来限制network traffic进出EC2 Instance的。但是NACL是从subnet层面对traffic进行限制，而Security Groups是从EC2 Instance层面上对traffic进行限制的。另外一点不同是，我们可以对NACL创建DENY Rules，但是不能对Security Groups创建DENY Rules**。
 
-![](../.gitbook/assets/image%20%28322%29.png)
+![](../.gitbook/assets/image%20%28330%29.png)
 
 ### 5.2. Understanding How Security Groups Work
 
 ELB \(Elastic Load Balancer\)：作用是接受从Internet Gateway传入的信号，并在各个EC2 Instance之间，对该信号进行负载均衡（load balance）。所以ELB就决定着一个信号会被传向哪个EC2 Instance。
 
-![](../.gitbook/assets/image%20%28162%29.png)
+![](../.gitbook/assets/image%20%28165%29.png)
 
 所以，我们通常需要保证左右两个EC2 Instance的Security Group有相同的Rule（i.e. 他们的Rule要允许/阻挡的信号是相同的）。否则，可能会出现：对于一个相同的信号，EC2 Instance 1收到了，但EC2 Instance 2没收到的现象。
 
 对于Security Groups，默认上，所有的inbound traffic都被DENY，所有outbound traffic都被ALLOW：（见下图，中间蓝框就是EC2 Instance 1的Security Group）
 
-![](../.gitbook/assets/image%20%28187%29.png)
+![](../.gitbook/assets/image%20%28191%29.png)
 
 ### 5.3. 如何使用 \(How to use and set Security Groups\)
 
@@ -235,19 +235,19 @@ ELB \(Elastic Load Balancer\)：作用是接受从Internet Gateway传入的信�
 
 Enter "EC2 Dashboard" --&gt; Click "Security Groups" --&gt; Check Security Group named as "default" --&gt; Click "Inbound" and "Outbound" respectively. 你会发现所有inbound和outbound traffic都是ALLOW的：default security group是在你创建了EC2 Instance之后自动被创建的（如果你没有其他4个Security Group没关系，我们只看default Security Group）。
 
-![](../.gitbook/assets/image%20%28158%29.png)
+![](../.gitbook/assets/image%20%28161%29.png)
 
-![](../.gitbook/assets/image%20%28312%29.png)
+![](../.gitbook/assets/image%20%28320%29.png)
 
 #### 5.3.2. Create a new Security Group:
 
 Click "Create Security Group" --&gt; You'll see the second picture below \(All inbound traffic is not allowed \(denied\) by default\) --&gt; You'll also see the third picture below \(All outbound traffic is allowed by default\) 
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
-![](../.gitbook/assets/image%20%28301%29.png)
+![](../.gitbook/assets/image%20%28309%29.png)
 
-![](../.gitbook/assets/image%20%28265%29.png)
+![](../.gitbook/assets/image%20%28271%29.png)
 
 #### 5.3.3. Add Traffic Rules for Security Group:
 
@@ -257,7 +257,7 @@ Click "Add Rule" --&gt; Select "HTTP" under "Type" tag.你会发现你没有权�
 
 如果点击"Create"按钮之后，我们的VPC结构就如下图所示：此时，右边的Subnet2中有我们默认（default）的Security Group \(SG\)，它不允许任何traffic进入EC2 Instance 2。左边的Subnet1是自定义的Security Group，允许HTTP traffic进入EC2 Instance 1。
 
-![](../.gitbook/assets/image%20%28143%29.png)
+![](../.gitbook/assets/image%20%28146%29.png)
 
 所以上面的例子能看出，NACLs是stateless的，而Security Group是stateful的。
 
@@ -271,7 +271,7 @@ IP Addressing provides an EC2 Instance with **public IP address**.
 
 Quick Example: 我们将network traffic想象成实体邮件，将IP address想象成每个收件人的家庭住址。在邮差寄送邮件的时候就需要找到你的住址。如果没有住址，邮差就无法寄送邮件
 
-![](../.gitbook/assets/image%20%28151%29.png)
+![](../.gitbook/assets/image%20%28154%29.png)
 
 ## 6.2 Public and Private IP Addresses:
 
@@ -289,7 +289,7 @@ Quick Example: 我们将network traffic想象成实体邮件，将IP address想�
 
 **另外要注意，default VPC和subnet都已经被预先配置好了，这样一来任何新建的EC2 instance都会有一个public IP address**
 
-![](../.gitbook/assets/image%20%28293%29.png)
+![](../.gitbook/assets/image%20%28301%29.png)
 
 ### 6.3. 操作
 
@@ -297,49 +297,49 @@ Quick Example: 我们将network traffic想象成实体邮件，将IP address想�
 
 Enter "VPC Dashboard" --&gt; Click "Your VPCs" --&gt; Click "Create VPC":
 
-![](../.gitbook/assets/image%20%28165%29.png)
+![](../.gitbook/assets/image%20%28168%29.png)
 
 Type "testvpc" in "Name tag" --&gt; Type "10.20.0.0/24" in "IPv4 VIDR block" --&gt; Click "Create":
 
-![](../.gitbook/assets/image%20%28137%29.png)
+![](../.gitbook/assets/image%20%28140%29.png)
 
 #### 6.3.2. Create a Subnet:
 
 Click "Subnets" --&gt; Click "Create subnet":
 
-![](../.gitbook/assets/image%20%28239%29.png)
+![](../.gitbook/assets/image%20%28245%29.png)
 
 Type "testsubnet" in "Name tag" --&gt; Select "testvpc" in "VPC" --&gt; Type "10.20.0.0/24" in "IPv4 CIDR block" --&gt; Click "Create":
 
-![](../.gitbook/assets/image%20%28256%29.png)
+![](../.gitbook/assets/image%20%28262%29.png)
 
 Check "testsubnet" you just created --&gt; In "description" tag below, you'll see that "Auto-assign public IPv4 address" is "No"
 
-![](../.gitbook/assets/image%20%28237%29.png)
+![](../.gitbook/assets/image%20%28242%29.png)
 
 #### 6.3.3. Then we'll go back to EC2 and launch an EC2:
 
 Enter "EC2 Dashboard" --&gt; Click "Launch Instances":
 
-![](../.gitbook/assets/image%20%28332%29.png)
+![](../.gitbook/assets/image%20%28340%29.png)
 
 Select "Amazon Linux AMI 2018.03.0 \(HVM\), SSD Volume Type - ami-00eb20669e0990cb4":
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2875%29.png)
 
 Select "Next: Configure instance details":
 
-![](../.gitbook/assets/image%20%28134%29.png)
+![](../.gitbook/assets/image%20%28137%29.png)
 
 In the following page, if you Switch "Network" to "testvpc", you'll find that "Auto-assign Public IP" is "Disable".  However, in "default" VPC, "Auto-assign Public IP" is "Enable".
 
-![](../.gitbook/assets/image%20%28135%29.png)
+![](../.gitbook/assets/image%20%28138%29.png)
 
 ![](../.gitbook/assets/image%20%2835%29.png)
 
 ### 6.4. How EC2 is connected to Internet:
 
-![](../.gitbook/assets/image%20%2867%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 所以，如果你的EC2 Instance连不上网Internet，你就要逐个检查这几个部分。
 
@@ -371,35 +371,35 @@ Basic Steps:
 7. Review and launch
 8. Create and download a Key Pair 
 
-![](../.gitbook/assets/image%20%28110%29.png)
+![](../.gitbook/assets/image%20%28113%29.png)
 
 下面是Lanuch EC2 Instance的完整步骤（这里将省略文字描述）：
 
-![](../.gitbook/assets/image%20%28286%29.png)
+![](../.gitbook/assets/image%20%28293%29.png)
 
-![](../.gitbook/assets/image%20%28361%29.png)
+![](../.gitbook/assets/image%20%28370%29.png)
 
-![](../.gitbook/assets/image%20%2871%29.png)
+![](../.gitbook/assets/image%20%2873%29.png)
 
-![](../.gitbook/assets/image%20%28271%29.png)
+![](../.gitbook/assets/image%20%28278%29.png)
 
 然后将之前给的4行Bash Script复制到下图中：
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](../.gitbook/assets/image%20%2897%29.png)
 
-![](../.gitbook/assets/image%20%28236%29.png)
+![](../.gitbook/assets/image%20%28241%29.png)
 
-![](../.gitbook/assets/image%20%28229%29.png)
+![](../.gitbook/assets/image%20%28234%29.png)
 
-![](../.gitbook/assets/image%20%28245%29.png)
+![](../.gitbook/assets/image%20%28251%29.png)
 
-![](../.gitbook/assets/image%20%28221%29.png)
+![](../.gitbook/assets/image%20%28226%29.png)
 
-![](../.gitbook/assets/image%20%28230%29.png)
+![](../.gitbook/assets/image%20%28235%29.png)
 
-![](../.gitbook/assets/image%20%28200%29.png)
+![](../.gitbook/assets/image%20%28205%29.png)
 
-![](../.gitbook/assets/image%20%2881%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 ===============================  我是分界线 ===============================
 
@@ -407,65 +407,105 @@ Basic Steps:
 {% tab title="Windows" %}
 如果你的Windows上没有PuTTY，我们在新窗口中打开"Connect using PuTTY"：
 
-![](../.gitbook/assets/image%20%28157%29.png)
+![](../.gitbook/assets/image%20%28160%29.png)
 
 然后点击PuTTY download page：
 
-![](../.gitbook/assets/image%20%2885%29.png)
+![](../.gitbook/assets/image%20%2887%29.png)
 
 点击Download Here：
 
-![](../.gitbook/assets/image%20%2877%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 我的是64bit的Windows，所以：
 
-![](../.gitbook/assets/image%20%2870%29.png)
+![](../.gitbook/assets/image%20%2872%29.png)
 
 然后打开下载的.msi文件并安装：
 
-![](../.gitbook/assets/image%20%28288%29.png)
+![](../.gitbook/assets/image%20%28295%29.png)
 
 然后打开PuTTYgen：
 
-![](../.gitbook/assets/image%20%28189%29.png)
+![](../.gitbook/assets/image%20%28193%29.png)
 
 ![](../.gitbook/assets/image%20%2849%29.png)
 
-![](../.gitbook/assets/image%20%28113%29.png)
+![](../.gitbook/assets/image%20%28116%29.png)
+
+你会在PuTTYgen中看到.pem文件的相关信息，然后Click "Save private key"： 
+
+![](../.gitbook/assets/image%20%28204%29.png)
+
+Click "Yes":
+
+![](../.gitbook/assets/image%20%28298%29.png)
+
+Select the directory you want to save. Type the file name as "essentialputty":
+
+![](../.gitbook/assets/image%20%2851%29.png)
+
+Close PuTTYgen. Open PuTTY:
+
+![](../.gitbook/assets/image%20%28243%29.png)
+
+打开PuTTY之后，我们回到AWS页面，将"Public DNS \(IPv4\)"后边的地址复制到PuTTY的"Host Name \(or IP address\)"这一栏：
+
+![](../.gitbook/assets/image%20%28371%29.png)
+
+![](../.gitbook/assets/image%20%28176%29.png)
+
+然后再回到AWS界面，点击"Connect":
+
+![](../.gitbook/assets/image%20%2865%29.png)
+
+在弹出的窗口中，赋值复制用户名"ec2-user"，粘贴到PuTTY --&gt; Connection --&gt; Data --&gt; "Auto-login username"这一栏下：
+
+![](../.gitbook/assets/image%20%28367%29.png)
+
+![](../.gitbook/assets/image%20%28275%29.png)
+
+然后在PuTTY --》 SSH --&gt; A  Au't'h--&gt;&gt;&gt; --&gt;
 
 
 
-![](../.gitbook/assets/image%20%28261%29.png)
 
 
 
-![](../.gitbook/assets/image%20%2880%29.png)
+
+
+
+![](../.gitbook/assets/image%20%28267%29.png)
+
+
+
+![](../.gitbook/assets/image%20%2882%29.png)
 
 然后在Linux/Mac系统中， 进入Terminal：输入上图中的第一行代码`chmod 400 essentialskp.pem`
 
-![](../.gitbook/assets/image%20%28201%29.png)
+![](../.gitbook/assets/image%20%28206%29.png)
 
 然后，将刚刚的第3行代码粘贴：
 
-![](../.gitbook/assets/image%20%28184%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
 输入"Yes"并回车：
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 然后输入"ifconfig"并回车：你会看到我的Internet address是172.31.23.69（你的可能不同）
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 然后我们回到AWS页面：发现“Private IPs”也是172.31.23.69。同时我们还能看到Public IP是18.234.255.212
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2892%29.png)
 
 我们来检查一下public IP：（先复制Public IP）：
 
-![](../.gitbook/assets/image%20%28333%29.png)
+![](../.gitbook/assets/image%20%28341%29.png)
 
-![](../.gitbook/assets/image%20%28337%29.png)
+![](../.gitbook/assets/image%20%28345%29.png)
 
 如果你出现了上图的情况（一直在加载，但没有页面），我们就需要做一些trouble-shooting：我们先回到刚刚的Terminal，输入`yum update -y`
 
@@ -473,11 +513,11 @@ Basic Steps:
 
 如果你没有权限，可以执行`sudo yum update -y`：
 
-![](../.gitbook/assets/image%20%28149%29.png)
+![](../.gitbook/assets/image%20%28152%29.png)
 
 如果是出现如下结果：
 
-![](../.gitbook/assets/image%20%28243%29.png)
+![](../.gitbook/assets/image%20%28249%29.png)
 
 说明可能我们的NACL是有问题的，此时我们回到这里：我们发现"EssentialsNACL"这个NACL正在使用private subnet 4，而我们当时创建的EC2 Instance用的是Public Subnet 1（**见7.1的第5张图**）
 
@@ -485,23 +525,23 @@ Basic Steps:
 
 然后我们进入default NACL然后Click "Edit"（因为我们发现这个NACL的Outbound Rule只允许端口1024-65535之间的TCP traffic传出EC2。所以我们要开放所有端口）：Click the default NACL --&gt; Click "Edit" --&gt; Replace "1024" with "1" --&gt; Click "Save"：
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
-![](../.gitbook/assets/image%20%28188%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 同样，我们还需要对Inbound进行修改：Click "Inbound Rules" --&gt; "Click "Edit" --&gt; Select "TCP" under "Type" column --&gt; Type "1-65535" Under "Port range" column --&gt; Click "Save": 
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28118%29.png)
 
-![](../.gitbook/assets/image%20%28120%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 然后再回到Terminal：并输入"`sudo yum update -y`"：
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
 等一下所有的package都安装完成后：输入"`sudo yum install -y httpd`"
 
-![](../.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
 同样，安装完成后，我们输入`service httpd start`
 
@@ -509,39 +549,39 @@ Basic Steps:
 
 再回到浏览器，刷新，发现能加载Apache了：
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 到此我们就完成了EC2在Linux和Mac上的启动。
 {% endtab %}
 
 {% tab title="Linux/Mac" %}
-![](../.gitbook/assets/image%20%2880%29.png)
+![](../.gitbook/assets/image%20%2882%29.png)
 
 然后在Linux/Mac系统中， 进入Terminal：输入上图中的第一行代码`chmod 400 essentialskp.pem`
 
-![](../.gitbook/assets/image%20%28201%29.png)
+![](../.gitbook/assets/image%20%28206%29.png)
 
 然后，将刚刚的第3行代码粘贴：
 
-![](../.gitbook/assets/image%20%28184%29.png)
+![](../.gitbook/assets/image%20%28188%29.png)
 
 输入"Yes"并回车：
 
-![](../.gitbook/assets/image%20%28114%29.png)
+![](../.gitbook/assets/image%20%28117%29.png)
 
 然后输入"ifconfig"并回车：你会看到我的Internet address是172.31.23.69（你的可能不同）
 
-![](../.gitbook/assets/image%20%2862%29.png)
+![](../.gitbook/assets/image%20%2863%29.png)
 
 然后我们回到AWS页面：发现“Private IPs”也是172.31.23.69。同时我们还能看到Public IP是18.234.255.212
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2892%29.png)
 
 我们来检查一下public IP：（先复制Public IP）：
 
-![](../.gitbook/assets/image%20%28333%29.png)
+![](../.gitbook/assets/image%20%28341%29.png)
 
-![](../.gitbook/assets/image%20%28337%29.png)
+![](../.gitbook/assets/image%20%28345%29.png)
 
 如果你出现了上图的情况（一直在加载，但没有页面），我们就需要做一些trouble-shooting：我们先回到刚刚的Terminal，输入`yum update -y`
 
@@ -549,11 +589,11 @@ Basic Steps:
 
 如果你没有权限，可以执行`sudo yum update -y`：
 
-![](../.gitbook/assets/image%20%28149%29.png)
+![](../.gitbook/assets/image%20%28152%29.png)
 
 如果是出现如下结果：
 
-![](../.gitbook/assets/image%20%28243%29.png)
+![](../.gitbook/assets/image%20%28249%29.png)
 
 说明可能我们的NACL是有问题的，此时我们回到这里：我们发现"EssentialsNACL"这个NACL正在使用private subnet 4，而我们当时创建的EC2 Instance用的是Public Subnet 1（**见7.1的第5张图**）
 
@@ -561,23 +601,23 @@ Basic Steps:
 
 然后我们进入default NACL然后Click "Edit"（因为我们发现这个NACL的Outbound Rule只允许端口1024-65535之间的TCP traffic传出EC2。所以我们要开放所有端口）：Click the default NACL --&gt; Click "Edit" --&gt; Replace "1024" with "1" --&gt; Click "Save"：
 
-![](../.gitbook/assets/image%20%28167%29.png)
+![](../.gitbook/assets/image%20%28170%29.png)
 
-![](../.gitbook/assets/image%20%28188%29.png)
+![](../.gitbook/assets/image%20%28192%29.png)
 
 同样，我们还需要对Inbound进行修改：Click "Inbound Rules" --&gt; "Click "Edit" --&gt; Select "TCP" under "Type" column --&gt; Type "1-65535" Under "Port range" column --&gt; Click "Save": 
 
-![](../.gitbook/assets/image%20%28115%29.png)
+![](../.gitbook/assets/image%20%28118%29.png)
 
-![](../.gitbook/assets/image%20%28120%29.png)
+![](../.gitbook/assets/image%20%28123%29.png)
 
 然后再回到Terminal：并输入"`sudo yum update -y`"：
 
-![](../.gitbook/assets/image%20%2886%29.png)
+![](../.gitbook/assets/image%20%2888%29.png)
 
 等一下所有的package都安装完成后：输入"`sudo yum install -y httpd`"
 
-![](../.gitbook/assets/image%20%28124%29.png)
+![](../.gitbook/assets/image%20%28127%29.png)
 
 同样，安装完成后，我们输入`service httpd start`
 
@@ -585,13 +625,13 @@ Basic Steps:
 
 再回到浏览器，刷新，发现能加载Apache了：
 
-![](../.gitbook/assets/image%20%28146%29.png)
+![](../.gitbook/assets/image%20%28149%29.png)
 
 到此我们就完成了EC2在Linux和Mac上的启动。
 {% endtab %}
 {% endtabs %}
 
-![](../.gitbook/assets/image%20%28316%29.png)
+![](../.gitbook/assets/image%20%28324%29.png)
 
 
 
@@ -601,7 +641,7 @@ Basic Steps:
 
 如果你在使用Linux或Mac系统，可以从这里继续。如果在用Windows，则需要下载一个PuTTY虚拟终端。
 
-![](../.gitbook/assets/image%20%28261%29.png)
+![](../.gitbook/assets/image%20%28267%29.png)
 
 
 
