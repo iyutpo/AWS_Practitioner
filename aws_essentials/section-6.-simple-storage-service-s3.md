@@ -1,4 +1,4 @@
-# 6. Simple Storage Service \(S3\)
+# Section 6. Simple Storage Service \(S3\)
 
 ### 1.1. Definition of S3
 
