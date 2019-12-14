@@ -9,6 +9,5 @@
 * [Section 3. Overview of AWS Network Services](aws_essentials/section-3.-overview-of-aws-network-services.md)
 * [Section 4. Network Services and Connectivity](aws_essentials/section-4.-network-services-and-connectivity.md)
 * [Section 5. Elastic Cloud Compute \(EC2\)](aws_essentials/section-5.-elastic-cloud-compute-ec2.md)
-* [6. Simple Storage Service \(S3\)](aws_essentials/6.-simple-storage-service-s3.md)
 * [Section 6. Simple Storage Service \(S3\)](aws_essentials/section-6.-simple-storage-service-s3.md)
 
