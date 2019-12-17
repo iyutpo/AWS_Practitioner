@@ -15,4 +15,6 @@
 * [Section 9. Management Tools](aws_essentials/section-9.-management-tools.md)
 * [Section 10. Load Balancing, Elasticity, and Scalability](aws_essentials/section-10.-load-balancing-elasticity-and-scalability.md)
 * [Section 11. Auto Scaling](aws_essentials/section-11.-auto-scaling.md)
+* [Section 12. Route 53](aws_essentials/section-12.-route-53.md)
+* [Section 13. Serverless Compute](aws_essentials/section-13.-serverless-compute.md)
 
