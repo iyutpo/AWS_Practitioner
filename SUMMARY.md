@@ -17,4 +17,5 @@
 * [Section 11. Auto Scaling](aws_essentials/section-11.-auto-scaling.md)
 * [Section 12. Route 53](aws_essentials/section-12.-route-53.md)
 * [Section 13. Serverless Compute](aws_essentials/section-13.-serverless-compute.md)
+* [Notes 1](aws_essentials/notes-1.md)
 
