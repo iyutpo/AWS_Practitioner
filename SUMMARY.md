@@ -19,3 +19,8 @@
 * [Section 13. Serverless Compute](aws_essentials/section-13.-serverless-compute.md)
 * [Notes 1](aws_essentials/notes-1.md)
 
+## AWS\_Architect\_Associate
+
+* [AWS\_Architect\_Associate\_Practice\_Correction](aws_architect_associate/aws_architect_associate_practice_correction.md)
+* [Untitled](aws_architect_associate/untitled-1.md)
+
